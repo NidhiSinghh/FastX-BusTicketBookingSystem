@@ -4,37 +4,37 @@ using FastX.Models;
 
 namespace FastX.Repositories
 {
-    public class UserRepository : IRepository<int, User>
+    public class BusOperatorRepository : IRepository<int, BusOperator>
     {
         private readonly FastXContext _context;
 
-        public UserRepository(FastXContext context)
+        public BusOperatorRepository(FastXContext context)
         {
             _context = context;
         }
-        public async Task<User> Add(User item)
+        public async Task<BusOperator> Add(BusOperator item)
         {
             _context.Add(item);
             _context.SaveChanges();
             return item;
         }
 
-        public Task<User> Delete(int key)
+        public Task<BusOperator> Delete(int key)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<User>> GetAsync()
+        public Task<List<BusOperator>> GetAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<User> GetAsync(int key)
+        public Task<BusOperator> GetAsync(int key)
         {
             throw new NotImplementedException();
         }
 
-        public Task<User> Update(User item)
+        public Task<BusOperator> Update(BusOperator item)
         {
             throw new NotImplementedException();
         }

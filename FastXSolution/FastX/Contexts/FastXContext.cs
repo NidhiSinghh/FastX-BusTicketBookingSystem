@@ -21,11 +21,12 @@ namespace FastX.Contexts
         public DbSet<Amenity> Amenities { get; set; }
         public DbSet<BusAmenity> BusAmenities { get; set; }
         public DbSet<Payment> Payments { get; set; }
-        public DbSet<Routee> Routes { get; set; }
+        public DbSet<Routee> Routees { get; set; }
         public DbSet<RouteStop> RouteStops { get; set; }
         public DbSet<Seat> Seats { get; set; }
         public DbSet<Stop> Stops { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<AllUser> AllUsers { get; set; }
 
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
@@ -79,5 +80,18 @@ namespace FastX.Contexts
         //        .WithOne(s => s.Bus)
         //        .HasForeignKey(s => s.BusId);
         //}
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Booking>()
+                .HasOne(b => b.User)
+                .WithMany(u => u!.Bookings)
+                .HasForeignKey(b => b.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+        }
+
+
     }
 }

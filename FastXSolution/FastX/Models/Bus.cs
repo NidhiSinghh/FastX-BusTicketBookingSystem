@@ -6,13 +6,16 @@ namespace FastX.Models
     public class Bus
     {
         [Key]
-        public int? BusId { get; set; }
+        public int BusId { get; set; }
         public string? BusName { get; set; }
         
         public string? BusType { get; set; }
         public int? TotalSeats { get; set; }
         public string? Origin { get; set; }
         public string? Destination { get; set; }
+        
+        public DateTime? TravelDate {  get; set; }
+
         public DateTime? ArrivalTime { get; set; }
 
         public DateTime? DepartureTime { get; set; }
