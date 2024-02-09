@@ -6,8 +6,8 @@ namespace FastX.Interfaces
     {
         public Task<List<Bus>> GetBusList();
         public Task<Bus> GetBus(int id);
-        Task<List<BusDto>> SearchBusesAsync(string origin, string destination, DateTime date);
-        Task<List<BusDto>> SearchBusesAsync(string origin, string destination, DateTime date,string busType);
+        Task<List<BusDtoForUser>> SearchBusesAsync(string origin, string destination, DateTime date);
+        Task<List<BusDtoForUser>> SearchBusesAsync(string origin, string destination, DateTime date,string busType);
 
        
     }

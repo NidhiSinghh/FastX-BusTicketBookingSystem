@@ -13,7 +13,7 @@ namespace FastX.Services
             _busRepository = busRepository;
         }
 
-        public async Task<List<BusDto>> SearchBusesAsync(string origin, string destination, DateTime date)
+        public async Task<List<BusDtoForUser>> SearchBusesAsync(string origin, string destination, DateTime date)
         {
             try
             {
@@ -24,7 +24,7 @@ namespace FastX.Services
                     throw new BusNotFoundException();
                 }
             
-                var busDtos = buses.Select(bus => new BusDto
+                var busDtos = buses.Select(bus => new BusDtoForUser
                 {
                     BusId = bus.BusId,
                     BusName = bus.BusName,
@@ -47,7 +47,7 @@ namespace FastX.Services
             }
         }
 
-        public async Task<List<BusDto>> SearchBusesAsync(string origin, string destination, DateTime date, string busType)
+        public async Task<List<BusDtoForUser>> SearchBusesAsync(string origin, string destination, DateTime date, string busType)
         {
             try
             {
@@ -57,7 +57,7 @@ namespace FastX.Services
                     throw new BusNotFoundException();
 
                 }
-                var busDtos = buses.Select(bus => new BusDto
+                var busDtos = buses.Select(bus => new BusDtoForUser
                 {
                     BusId = bus.BusId,
                     BusName = bus.BusName,

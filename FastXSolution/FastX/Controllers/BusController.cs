@@ -17,7 +17,7 @@ namespace FastX.Controllers
         }
         [HttpGet("search")]
      
-        public async Task<ActionResult<List<BusDto>>> SearchBusesAsync(string origin, string destination, DateTime date)
+        public async Task<ActionResult<List<BusDtoForUser>>> SearchBusesAsync(string origin, string destination, DateTime date)
         {
             try
             {
@@ -37,7 +37,7 @@ namespace FastX.Controllers
         }
         [HttpGet("searchWithBusType")]
 
-        public async Task<ActionResult<List<BusDto>>> SearchBusesAsync(string origin, string destination, DateTime date,string busType)
+        public async Task<ActionResult<List<BusDtoForUser>>> SearchBusesAsync(string origin, string destination, DateTime date,string busType)
         {
             try
             {

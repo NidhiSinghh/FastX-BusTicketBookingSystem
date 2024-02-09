@@ -1,6 +1,6 @@
 ﻿namespace FastX.Models
 {
-    public class BusDto
+    public class BusDtoForUser
     {
         public int BusId { get; set; }
         public string BusName { get; set; }
